@@ -26,11 +26,11 @@ export default function Home() {
           
           <p>Let&apos;s rewrite the future, starting with <strong>the wrong code</strong>.</p>
 
-          <p className="text-gray-600">
+          <p className="text-muted">
             Founded by{' '}
             <a 
               href="https://instagram.com/anatasof" 
-              className="text-black hover:underline font-medium"
+              className="text-accent hover:underline font-medium transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -39,7 +39,7 @@ export default function Home() {
             with{' '}
             <a 
               href="https://instagram.com/rachmanareef" 
-              className="text-black hover:underline font-medium"
+              className="text-accent hover:underline font-medium transition-colors"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -48,7 +48,7 @@ export default function Home() {
           </p>
         </div>
         
-        <footer className="mt-12 pt-6 border-t border-gray-200 text-sm text-gray-500">
+        <footer className="mt-12 pt-6 border-t border-border text-sm text-muted">
           <p>&copy; {currentYear} The Wrong Code</p>
         </footer>
       </div>

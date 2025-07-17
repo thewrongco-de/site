@@ -12,11 +12,9 @@ module.exports = {
       colors: {
         foreground: 'var(--foreground)',
         background: 'var(--background)',
-        black: 'var(--black)',
-        white: 'var(--white)',
-        text: 'var(--text)',
-        'text-light': 'var(--text-light)',
+        muted: 'var(--muted)',
         border: 'var(--border)',
+        accent: 'var(--accent)',
       },
     },
   },

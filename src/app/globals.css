@@ -6,6 +6,9 @@
   :root {
     --foreground: #000000;
     --background: #ffffff;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --accent: #000000;
   }
 
   html {
@@ -20,12 +23,16 @@
     margin: 0;
     padding: 0;
     font-feature-settings: 'rlig' 1, 'calt' 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --foreground: #ffffff;
       --background: #000000;
+      --muted: #9ca3af;
+      --border: #374151;
+      --accent: #ffffff;
     }
   }
 }
