@@ -2,33 +2,31 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export',
-  assetPrefix: '/', // Use absolute paths for assets
-  basePath: '', // Ensure no base path is set for root domain
+  // Remove assetPrefix and basePath as they can cause issues with static exports
   images: {
-    unoptimized: true, // Disable Image Optimization API as it's not needed for static exports
+    unoptimized: true,
   },
-  // Disable server-side rendering of font optimization
+  // Disable experimental features that might cause issues
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false, // Disable as it's causing issues with static export
   },
-  // Configure proper MIME types for static assets
+  // Disable headers as they don't work with static export
+  // and can cause issues with Vercel
+  // Remove the entire headers() function
+  // Remove webpack config if not needed
+  // Add trailingSlash to ensure proper routing
+  trailingSlash: true,
+  // Add custom webpack config to handle static exports
   webpack: (config, { isServer }) => {
     // Important: return the modified config
+    if (!isServer) {
+      // Set __dirname to false to prevent webpack from including Node.js polyfills
+      // which can cause issues with static exports
+      config.node = {
+        __dirname: false,
+      };
+    }
     return config;
-  },
-  // Handle font loading
-  async headers() {
-    return [
-      {
-        source: '/(.*).(woff|woff2|ttf|eot|svg|png|jpg|jpeg|gif|ico)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-    ];
   },
 };
 

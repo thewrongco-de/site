@@ -46,21 +46,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Preload critical fonts */}
-        <link
-          rel="preload"
-          href={roboto.variable}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href={robotoMono.variable}
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
+        {/* Remove manual preload as Next.js handles it automatically */}
+        {/* Add viewport meta tag */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Add favicon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-full bg-white text-black antialiased font-mono">
         <div className="flex flex-col min-h-screen">
