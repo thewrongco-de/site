@@ -7,10 +7,10 @@ export default function Home() {
     <main className="flex-1">
       <div className="max-w-3xl mx-auto px-4 py-8">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold">The Wrong Code</h1>
+          <h1 className="text-3xl font-bold font-sans">The Wrong Code</h1>
         </header>
         
-        <div className="space-y-6 text-lg">
+        <div className="space-y-6 text-lg font-mono">
           <p>Most businesses start with what they have—tight deadlines, limited resources, and a need to move fast.</p>
           <p>That&apos;s how <strong>the wrong code</strong> happens. And that&apos;s okay.</p>
           

@@ -14,7 +14,6 @@ A clean, minimalist website built with modern web technologies, featuring automa
 - **Static Generation**: Pre-rendered pages for fast loading
 
 ### Performance & SEO
-- **Optimized Font Loading**: Uses Inter font with proper preloading
 - **Image Optimization**: Configured for optimal performance
 - **SEO Ready**: Proper meta tags, Open Graph, and Twitter Card support
 - **Core Web Vitals**: Optimized for excellent performance metrics
