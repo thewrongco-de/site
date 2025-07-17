@@ -1,22 +1,13 @@
 import type { Metadata } from 'next';
-import { Roboto, Roboto_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 
-// Load fonts with explicit subsets and display settings
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
+// Use system font stack for better performance
+const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-roboto',
-  preload: true,
-});
-
-const robotoMono = Roboto_Mono({
-  weight: ['400', '500'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto-mono',
+  variable: '--font-inter',
   preload: true,
 });
 
@@ -40,20 +31,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="en" 
-      className={`${roboto.variable} ${robotoMono.variable} h-full`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <head>
-        {/* Remove manual preload as Next.js handles it automatically */}
-        {/* Add viewport meta tag */}
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Add favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body className="min-h-full bg-white text-black antialiased font-mono">
-        <div className="flex flex-col min-h-screen">
+      <body className="min-h-screen bg-white text-black antialiased">
+        <div className="min-h-screen flex flex-col">
           {children}
         </div>
         <Analytics />

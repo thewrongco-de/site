@@ -2,21 +2,20 @@
 module.exports = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-roboto)'],
-        mono: ['var(--font-roboto-mono)'],
+        sans: ['var(--font-inter)', 'sans-serif'],
       },
       colors: {
+        foreground: 'var(--foreground)',
+        background: 'var(--background)',
         black: 'var(--black)',
         white: 'var(--white)',
         text: 'var(--text)',
         'text-light': 'var(--text-light)',
-        background: 'var(--background)',
         border: 'var(--border)',
       },
     },

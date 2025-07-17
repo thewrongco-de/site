@@ -1,125 +1,51 @@
-/*! @import */
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
-    --black: #000000;
-    --white: #ffffff;
-    --text: #000000;
-    --text-light: #666666;
+    --foreground: #000000;
     --background: #ffffff;
-    --border: #e5e5e5;
-  }
-
-  /* Base styles */
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
   }
 
   html {
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: var(--font-roboto-mono), ui-monospace, monospace;
-    line-height: 1.6;
     height: 100%;
   }
 
   body {
+    @apply bg-background text-foreground min-h-screen;
     margin: 0;
     padding: 0;
-    min-height: 100%;
-    color: var(--text);
-    background-color: var(--background);
-    font-size: 1.125rem;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
-  /* Typography */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-roboto), sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: 0;
-  }
-
-  p {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Layout */
-  .container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .container {
-      max-width: 640px;
-      padding: 0 1.5rem;
-    }
-  }
-
-  @media (min-width: 768px) {
-    .container {
-      max-width: 768px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .container {
-      max-width: 1024px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .container {
-      max-width: 1280px;
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground: #ffffff;
+      --background: #000000;
     }
   }
 }
 
-/* Components */
 @layer components {
-  .prose {
+  .container {
+    @apply w-full px-4 mx-auto;
     max-width: 65ch;
   }
   
-  .prose-lg {
-    font-size: 1.125rem;
-    line-height: 1.7;
+  @screen sm {
+    .container {
+      @apply px-6;
+    }
   }
   
-  .prose p {
-    margin-bottom: 1.5em;
-  }
-  
-  .prose a {
-    color: var(--text);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
-  
-  .prose a:hover {
-    text-decoration-thickness: 2px;
+  @screen lg {
+    .container {
+      @apply px-8;
+    }
   }
 }
 
