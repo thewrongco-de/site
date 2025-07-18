@@ -1,150 +1,88 @@
-# The Wrong Code - Website
+# The Wrong Code - Development Guide
 
-## 🌐 Overview
+## Project Overview
+A modern Next.js website for The Wrong Code - rewrite the future, starting with the wrong code.
 
-A clean, minimalist website built with modern web technologies, featuring automatic dark/light mode switching based on system preferences. The site showcases The Wrong Code's mission to help businesses transition from scrappy MVP code to production-ready, scalable solutions.
+## Architecture
+- **Framework**: Next.js 15.1.3 with App Router
+- **Language**: TypeScript 5.x with strict configuration
+- **Styling**: Tailwind CSS 3.4.17 with CSS custom properties
+- **Fonts**: Google Fonts (Roboto and Roboto Mono)
+- **Analytics**: Vercel Analytics and Speed Insights
+- **Deployment**: Vercel with Node.js 22.x
 
-## ✨ Features
-
-### Core Functionality
-- **Automatic Dark/Light Mode**: Seamlessly switches between themes based on system preferences
-- **Server-Side Rendering**: Built with Next.js 15.4.1 for optimal performance
-- **Analytics & Monitoring**: Integrated Vercel Analytics and Speed Insights
-- **Responsive Design**: Mobile-first approach with smooth transitions
-- **Static Generation**: Pre-rendered pages for fast loading
-
-### Performance & SEO
-- **Image Optimization**: Configured for optimal performance
-- **SEO Ready**: Proper meta tags, Open Graph, and Twitter Card support
-- **Core Web Vitals**: Optimized for excellent performance metrics
-
-### Development Experience
-- **TypeScript**: Full type safety and better development experience
-- **ESLint 9.x**: Modern linting with flat config
-- **Tailwind CSS**: Utility-first styling with custom CSS variables
-- **PostCSS**: Advanced CSS processing with nesting support
-
-## 🏗️ Project Structure
-
+## Project Structure
 ```
 src/
-├── app/
-│   ├── globals.css       # Global styles with dark mode support
-│   ├── layout.tsx        # Root layout with analytics
-│   └── page.tsx          # Main page content
-├── public/
-│   └── favicon.ico       # Site favicon
-├── .gitignore           # Git ignore rules
-├── eslint.config.mjs    # ESLint configuration (flat config)
-├── next.config.js       # Next.js configuration
-├── package.json         # Dependencies and scripts
-├── postcss.config.js    # PostCSS with imports and nesting
-├── tailwind.config.js   # Tailwind configuration
-├── tsconfig.json        # TypeScript configuration
-└── vercel.json          # Vercel deployment config
+├── app/                    # Next.js App Router
+│   ├── layout.tsx         # Root layout (#root-layout)
+│   ├── page.tsx           # Home page (#main-content)
+│   ├── globals.css        # Global styles and dark mode
+│   └── favicon.ico        # Site icon
+├── components/            # Reusable UI components
+│   ├── Header.tsx         # Site header (#site-header)
+│   ├── HeroContent.tsx    # Main content (#hero-content)
+│   ├── FounderLinks.tsx   # Founder information (#founders-info)
+│   └── Footer.tsx         # Site footer (#site-footer)
+├── lib/                   # Utility functions and configurations
+│   ├── fonts.ts          # Font configurations
+│   ├── constants.ts      # Site configuration and constants
+│   └── metadata.ts       # SEO metadata
+└── types/                 # TypeScript type definitions
+    └── index.ts          # Global types (FounderLink, SiteConfig)
 ```
 
-## 🎨 Design System
+## Key Sections & IDs
+- `#main-content` - Main page container (src/app/page.tsx:12)
+- `#site-header` - Header with site title (src/components/Header.tsx:4)
+- `#site-title` - Main site title (src/components/Header.tsx:5)
+- `#hero-content` - Main messaging section (src/components/HeroContent.tsx:4)
+- `#problem-statement` - Problem description (src/components/HeroContent.tsx:5)
+- `#solution-statement` - Solution description (src/components/HeroContent.tsx:11)
+- `#founders-info` - Founder links (src/components/FounderLinks.tsx:9)
+- `#site-footer` - Footer with copyright (src/components/Footer.tsx:8)
 
-### Color Scheme
-The site uses CSS variables for seamless dark/light mode switching:
+## Key Components
+- **Header** (`src/components/Header.tsx`) - Site title and branding
+- **HeroContent** (`src/components/HeroContent.tsx`) - Main messaging content
+- **FounderLinks** (`src/components/FounderLinks.tsx`) - Founder social links
+- **Footer** (`src/components/Footer.tsx`) - Copyright and site info
 
-**Light Mode:**
-- Background: `#ffffff`
-- Foreground: `#000000`
-- Muted: `#6b7280`
-- Border: `#e5e7eb`
-- Accent: `#000000`
+## Configuration
+- **Site Config** (`src/lib/constants.ts`) - Central site configuration
+- **Fonts** (`src/lib/fonts.ts`) - Google Fonts setup
+- **Metadata** (`src/lib/metadata.ts`) - SEO and OpenGraph metadata
+- **Types** (`src/types/index.ts`) - TypeScript interfaces
 
-**Dark Mode:**
-- Background: `#000000`
-- Foreground: `#ffffff`
-- Muted: `#9ca3af`
-- Border: `#374151`
-- Accent: `#ffffff`
+## Development Commands
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run type-check` - Run TypeScript compiler
 
-### Typography
-- **Primary Font**: Inter (variable font)
-- **Font Features**: Enabled ligatures and contextual alternates
-- **Responsive**: Scales appropriately across devices
+## Code Reference Standards
+- **Files**: `src/app/page.tsx:14` (file:line)
+- **Components**: `Header component in src/components/Header.tsx`
+- **Sections**: `#hero-content section`
+- **Functions**: `functionName() in src/lib/utils.ts:25`
 
-## 🛠️ Technology Stack
+## Design System
+- **Colors**: CSS custom properties in globals.css
+- **Fonts**: Roboto (sans) and Roboto Mono (mono)
+- **Dark Mode**: Automatic system preference detection
+- **Responsive**: Mobile-first Tailwind classes
 
-### Frontend
-- **Framework**: Next.js 15.4.1 (App Router)
-- **Language**: TypeScript 5.x
-- **Styling**: Tailwind CSS 3.4.17
-- **Fonts**: Next.js Font Optimization
+## Deployment
+- **Platform**: Vercel
+- **Domain**: https://www.thewrongco.de
+- **Node Version**: 22.x
+- **Build Command**: `npm run build`
+- **Output Directory**: `.next`
 
-### Development Tools
-- **Linting**: ESLint 9.x with flat config
-- **PostCSS**: CSS processing with imports and nesting
-- **Node.js**: 22.x (latest LTS)
-
-### Analytics & Monitoring
-- **Vercel Analytics**: User analytics and insights
-- **Speed Insights**: Performance monitoring
-- **SEO**: Open Graph and Twitter Card support
-
-## 📱 Responsive Design
-
-The site follows a mobile-first approach with:
-- Fluid typography scaling
-- Responsive spacing and layout
-- Touch-friendly interactions
-- Optimized for all device sizes
-
-## 🚀 Performance Features
-
-- **Static Generation**: Pre-rendered pages for fast loading
-- **Image Optimization**: Automatic image optimization
-- **Font Optimization**: Efficient font loading strategies
-- **Bundle Optimization**: Tree-shaking and code splitting
-- **Caching**: Optimized caching strategies
-
-## 🌙 Dark Mode Implementation
-
-The dark mode system uses:
-- CSS `prefers-color-scheme` media query
-- CSS custom properties for theme colors
-- Smooth transitions between themes
-- Automatic system preference detection
-- No JavaScript required for theme switching
-
-## 🔧 Development Scripts
-
-```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run vercel-build # Vercel build command
-```
-
-## 📦 Dependencies
-
-### Production
-- `next`: React framework
-- `react` & `react-dom`: React library
-- `@vercel/analytics`: Analytics integration
-- `@vercel/speed-insights`: Performance monitoring
-
-### Development
-- `typescript`: Type checking
-- `eslint`: Code linting
-- `tailwindcss`: Utility-first CSS
-- `postcss`: CSS processing
-- `autoprefixer`: CSS vendor prefixes
-
-## 🌍 Deployment
-
-The site is deployed on Vercel with:
-- Automatic deployments on push to main
-- Node.js 22.x runtime
-- Optimized build process
-- CDN distribution
-- SSL/TLS encryption
-
-## 📄 License
-
-This project is private and proprietary to The Wrong Code.
+## Key Features
+- Server-side rendering with static generation
+- Automatic font optimization
+- CSS-only dark mode (no JavaScript)
+- Performance monitoring with Vercel Analytics
+- SEO optimized with OpenGraph metadata

@@ -1,39 +1,10 @@
-import type { Metadata } from 'next';
-import { Roboto, Roboto_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { roboto, robotoMono } from '@/lib/fonts';
+import { metadata } from '@/lib/metadata';
 import './globals.css';
 
-// Load fonts with explicit subsets and display settings
-const roboto = Roboto({
-  weight: ['400', '500', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto',
-  preload: true,
-});
-
-const robotoMono = Roboto_Mono({
-  weight: ['400', '500'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto-mono',
-  preload: true,
-});
-
-export const metadata: Metadata = {
-  title: 'The Wrong Code - Evolving Beyond Early-Stage Tech',
-  description: 'Helping businesses evolve beyond their early-stage tech stack',
-  metadataBase: new URL('https://www.thewrongco.de'),
-  openGraph: {
-    title: 'The Wrong Code - Evolving Beyond Early-Stage Tech',
-    description: 'Helping businesses evolve beyond their early-stage tech stack',
-    url: 'https://www.thewrongco.de',
-    siteName: 'The Wrong Code',
-    locale: 'en_US',
-    type: 'website',
-  },
-};
+export { metadata };
 
 export default function RootLayout({
   children,
