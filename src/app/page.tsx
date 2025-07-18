@@ -9,13 +9,15 @@ export default function Home() {
   const currentYear = new Date().getFullYear();
   
   return (
-    <main className="flex-1" id="main-content">
-      <div className="max-w-3xl mx-auto px-4 py-8">
-        <Header />
-        <HeroContent />
-        <FounderLinks founders={siteConfig.founders} />
-        <Footer year={currentYear} siteName={siteConfig.name} />
-      </div>
-    </main>
+    <div className="min-h-screen flex flex-col">
+      <main className="flex-1" id="main-content">
+        <div className="max-w-3xl mx-auto px-4 py-8">
+          <Header />
+          <HeroContent />
+          <FounderLinks founders={siteConfig.founders} />
+        </div>
+      </main>
+      <Footer year={currentYear} siteName={siteConfig.name} />
+    </div>
   );
 }

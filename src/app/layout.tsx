@@ -19,9 +19,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased font-mono">
-        <div className="min-h-screen flex flex-col">
-          {children}
-        </div>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>
