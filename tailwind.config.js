@@ -19,7 +19,7 @@ module.exports = {
         accent: 'var(--accent)',
       },
       boxShadow: {
-        'material': '0 2px 4px -1px var(--muted), 0 4px 5px 0 var(--muted), 0 1px 10px 0 var(--muted)',
+        'material': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
       backdropBlur: {
         'glass': '4px',

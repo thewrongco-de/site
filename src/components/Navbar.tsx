@@ -26,7 +26,7 @@ export default function Navbar() {
           id="site-title" 
           className="text-foreground text-xl font-bold m-0 font-sans tracking-wide"
         >
-          The Wrong Code
+          <span data-text="The Wrong Code">The Wrong Code</span>
         </h1>
         <MaterialThemeToggle />
       </div>
