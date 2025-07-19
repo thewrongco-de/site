@@ -18,7 +18,7 @@ export default function Footer({ year, siteName }: FooterProps) {
       }}
     >
       <div className="max-w-3xl mx-auto px-4">
-        <p>&copy; {year} {siteName}</p>
+        <p>&copy; {year} {siteName} · Founded by <a href='https://instagram.com/anatasof'>@anatasof</a> with <a href='https://instagram.com/rachmanareef'>@rachmanareef</a></p>
       </div>
     </footer>
   );
