@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`sticky top-0 z-50 h-16 bg-background transition-shadow duration-200 ${
+      className={`sticky top-0 z-50 h-16 glass-effect transition-shadow duration-200 ${
         isScrolled ? 'shadow-material' : ''
       }`}
       id="site-navbar"
@@ -23,7 +23,7 @@ export default function Navbar() {
       <div className="max-w-3xl mx-auto px-6 h-full flex items-center">
         <h1 
           id="site-title" 
-          className="text-foreground text-xl font-medium m-0 font-sans tracking-wide"
+          className="text-foreground text-xl font-bold m-0 font-sans tracking-wide"
         >
           The Wrong Code
         </h1>

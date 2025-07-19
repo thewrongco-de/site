@@ -6,6 +6,7 @@
   :root {
     --foreground: #000000;
     --background: #ffffff;
+    --background-rgb: 255, 255, 255;
     --muted: #6b7280;
     --border: #e5e7eb;
     --accent: #000000;
@@ -30,6 +31,7 @@
     :root {
       --foreground: #ffffff;
       --background: #000000;
+      --background-rgb: 0, 0, 0;
       --muted: #9ca3af;
       --border: #374151;
       --accent: #ffffff;
@@ -53,6 +55,11 @@
     .container {
       @apply px-8;
     }
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-glass;
+    background: rgba(var(--background-rgb), 0.85);
   }
 
 }
