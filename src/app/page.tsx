@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '@/components/Header';
+import Navbar from '@/components/Navbar';
 import HeroContent from '@/components/HeroContent';
 import Footer from '@/components/Footer';
 import { siteConfig } from '@/lib/constants';
@@ -9,9 +9,9 @@ export default function Home() {
   
   return (
     <div className="min-h-screen flex flex-col">
+      <Navbar />
       <main className="flex-1" id="main-content">
-        <div className="max-w-3xl mx-auto px-4 py-8">
-          <Header />
+        <div className="max-w-3xl mx-auto p-6">
           <HeroContent />
         </div>
       </main>
