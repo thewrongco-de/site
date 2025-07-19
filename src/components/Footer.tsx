@@ -8,7 +8,7 @@ interface FooterProps {
 export default function Footer({ year, siteName }: FooterProps) {
   return (
     <footer 
-      className="mt-auto border-t border-border text-sm text-muted text-center" 
+      className="mt-auto text-sm text-muted text-center" 
       id="site-footer"
       style={{ 
         opacity: 0.6,
