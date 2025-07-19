@@ -20,10 +20,9 @@ src/
 │   ├── globals.css        # Global styles and dark mode
 │   └── favicon.ico        # Site icon
 ├── components/            # Reusable UI components
-│   ├── Header.tsx         # Site header (#site-header)
+│   ├── Navbar.tsx         # Glass effect navbar (#site-navbar)
 │   ├── HeroContent.tsx    # Main content (#hero-content)
-│   ├── FounderLinks.tsx   # Founder information (#founders-info)
-│   └── Footer.tsx         # Site footer (#site-footer)
+│   └── Footer.tsx         # Site footer with hover links (#site-footer)
 ├── lib/                   # Utility functions and configurations
 │   ├── fonts.ts          # Font configurations
 │   ├── constants.ts      # Site configuration and constants
@@ -33,20 +32,18 @@ src/
 ```
 
 ## Key Sections & IDs
-- `#main-content` - Main page container (src/app/page.tsx:12)
-- `#site-header` - Header with site title (src/components/Header.tsx:4)
-- `#site-title` - Main site title (src/components/Header.tsx:5)
-- `#hero-content` - Main messaging section (src/components/HeroContent.tsx:4)
-- `#problem-statement` - Problem description (src/components/HeroContent.tsx:5)
-- `#solution-statement` - Solution description (src/components/HeroContent.tsx:11)
-- `#founders-info` - Founder links (src/components/FounderLinks.tsx:9)
-- `#site-footer` - Footer with copyright (src/components/Footer.tsx:8)
+- `#main-content` - Main page container (src/app/page.tsx:13)
+- `#site-navbar` - Glass effect navbar (src/components/Navbar.tsx:17)
+- `#site-title` - Main site title (src/components/Navbar.tsx:24)
+- `#hero-content` - Main messaging section (src/components/HeroContent.tsx:5)
+- `#problem-statement` - Problem description (src/components/HeroContent.tsx:6)
+- `#solution-statement` - Solution description (src/components/HeroContent.tsx:12)
+- `#site-footer` - Footer with hover links (src/components/Footer.tsx:10)
 
 ## Key Components
-- **Header** (`src/components/Header.tsx`) - Site title and branding
+- **Navbar** (`src/components/Navbar.tsx`) - Glass effect navbar with 85% opacity and 4px backdrop blur
 - **HeroContent** (`src/components/HeroContent.tsx`) - Main messaging content
-- **FounderLinks** (`src/components/FounderLinks.tsx`) - Founder social links
-- **Footer** (`src/components/Footer.tsx`) - Copyright and site info
+- **Footer** (`src/components/Footer.tsx`) - Footer with hover effects on founder links
 
 ## Configuration
 - **Site Config** (`src/lib/constants.ts`) - Central site configuration
@@ -68,9 +65,11 @@ src/
 - **Functions**: `functionName() in src/lib/utils.ts:25`
 
 ## Design System
-- **Colors**: CSS custom properties in globals.css
+- **Colors**: CSS custom properties in globals.css with theme support
 - **Fonts**: Roboto (sans) and Roboto Mono (mono)
 - **Dark Mode**: Automatic system preference detection
+- **Glass Effects**: 85% opacity with 4px backdrop blur
+- **Interactive States**: Hover effects with underline, color, and weight changes
 - **Responsive**: Mobile-first Tailwind classes
 
 ## Deployment
@@ -82,6 +81,8 @@ src/
 
 ## Key Features
 - Server-side rendering with static generation
+- Glass morphism navbar with backdrop blur effects
+- Interactive hover states on footer links
 - Automatic font optimization
 - CSS-only dark mode (no JavaScript)
 - Performance monitoring with Vercel Analytics
