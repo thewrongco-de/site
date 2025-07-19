@@ -11,6 +11,7 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@material/web": "^2.3.0",
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.2.0",
     "critters": "^0.0.23",

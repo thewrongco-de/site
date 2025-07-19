@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import MaterialThemeToggle from './MaterialThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,13 +21,14 @@ export default function Navbar() {
       }`}
       id="site-navbar"
     >
-      <div className="max-w-3xl mx-auto px-6 h-full flex items-center">
+      <div className="max-w-3xl mx-auto px-6 h-full flex items-center justify-between">
         <h1 
           id="site-title" 
           className="text-foreground text-xl font-bold m-0 font-sans tracking-wide"
         >
           The Wrong Code
         </h1>
+        <MaterialThemeToggle />
       </div>
     </nav>
   );

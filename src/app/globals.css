@@ -7,8 +7,8 @@
     --foreground: #000000;
     --background: #ffffff;
     --background-rgb: 255, 255, 255;
-    --muted: #6b7280;
-    --border: #e5e7eb;
+    --muted: rgba(0, 0, 0, 0.6);
+    --border: rgba(0, 0, 0, 0.1);
     --accent: #000000;
   }
 
@@ -27,15 +27,45 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
+  /* System preference fallback when no data-theme is set */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme]) {
       --foreground: #ffffff;
       --background: #000000;
       --background-rgb: 0, 0, 0;
-      --muted: #9ca3af;
-      --border: #374151;
+      --muted: rgba(255, 255, 255, 0.6);
+      --border: rgba(255, 255, 255, 0.1);
       --accent: #ffffff;
     }
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+      --foreground: #000000;
+      --background: #ffffff;
+      --background-rgb: 255, 255, 255;
+      --muted: rgba(0, 0, 0, 0.6);
+      --border: rgba(0, 0, 0, 0.1);
+      --accent: #000000;
+    }
+  }
+
+  [data-theme="dark"] {
+    --foreground: #ffffff;
+    --background: #000000;
+    --background-rgb: 0, 0, 0;
+    --muted: rgba(255, 255, 255, 0.6);
+    --border: rgba(255, 255, 255, 0.1);
+    --accent: #ffffff;
+  }
+
+  [data-theme="light"] {
+    --foreground: #000000;
+    --background: #ffffff;
+    --background-rgb: 255, 255, 255;
+    --muted: rgba(0, 0, 0, 0.6);
+    --border: rgba(0, 0, 0, 0.1);
+    --accent: #000000;
   }
 }
 
@@ -60,6 +90,51 @@
   .glass-effect {
     @apply backdrop-blur-glass;
     background: rgba(var(--background-rgb), 0.85);
+  }
+
+  /* Material Design theme toggle button styles */
+  .theme-toggle-button {
+    border-radius: 20px !important;
+    min-width: 40px !important;
+    padding: 0 8px !important;
+    
+    /* Override ALL Material Design theme tokens for monochrome colors */
+    --md-text-button-label-text-color: var(--foreground);
+    --md-text-button-with-icon-icon-color: var(--foreground);
+    --md-text-button-hover-state-layer-color: var(--foreground);
+    --md-text-button-hover-state-layer-opacity: 0.08;
+    --md-text-button-focus-state-layer-color: var(--foreground);
+    --md-text-button-focus-state-layer-opacity: 0.12;
+    --md-text-button-pressed-state-layer-color: var(--foreground);
+    --md-text-button-pressed-state-layer-opacity: 0.16;
+    
+    /* Ensure ripple uses foreground color */
+    --md-ripple-color: var(--foreground);
+    --md-ripple-opacity: 0.2;
+    
+    /* Override system color tokens that might interfere */
+    --md-sys-color-primary: var(--foreground);
+    --md-sys-color-on-primary: var(--background);
+    --md-sys-color-primary-container: var(--background);
+    --md-sys-color-on-primary-container: var(--foreground);
+    --md-sys-color-secondary: var(--muted);
+    --md-sys-color-on-secondary: var(--background);
+    --md-sys-color-secondary-container: var(--background);
+    --md-sys-color-on-secondary-container: var(--foreground);
+    --md-sys-color-surface: var(--background);
+    --md-sys-color-on-surface: var(--foreground);
+    --md-sys-color-surface-variant: var(--background);
+    --md-sys-color-on-surface-variant: var(--muted);
+    --md-sys-color-outline: var(--border);
+    --md-sys-color-outline-variant: var(--border);
+  }
+
+  .theme-toggle-button::part(background) {
+    border-radius: 20px;
+  }
+
+  .theme-toggle-button::part(ripple) {
+    border-radius: 20px;
   }
 
 }
