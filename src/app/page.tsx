@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
 import HeroContent from '@/components/HeroContent';
-import FounderLinks from '@/components/FounderLinks';
 import Footer from '@/components/Footer';
 import { siteConfig } from '@/lib/constants';
 
@@ -14,7 +13,6 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-4 py-8">
           <Header />
           <HeroContent />
-          <FounderLinks founders={siteConfig.founders} />
         </div>
       </main>
       <Footer year={currentYear} siteName={siteConfig.name} />
