@@ -17,10 +17,11 @@ src/
 ├── app/                              # Next.js App Router
 │   ├── layout.tsx                   # Root layout with theme system
 │   ├── page.tsx                     # Homepage with three-section layout
+│   ├── not-found.tsx                # Custom 404 page with glitch effect
 │   ├── globals.css                  # Global styles + Material Design overrides
 │   └── favicon.ico                  # Site icon
 ├── components/                       # UI Components
-│   ├── Navbar.tsx                  # Glass navbar with scroll detection
+│   ├── Navbar.tsx                  # Interactive glass navbar with clickable title
 │   ├── HeroContent.tsx             # Problem → Solution messaging
 │   ├── Footer.tsx                  # Founder links with hover effects
 │   ├── MaterialThemeToggle.tsx     # MD theme toggle button
@@ -53,7 +54,9 @@ src/
 
 ### UI/UX Features
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Interactive States**: Smooth hover effects and transitions
-- **Material Ripples**: Authentic Material Design button interactions
+- **Interactive Navigation**: Clickable site title with Material Design interactions
+- **Glitch Effects**: CSS animations for digital aesthetic on 404 page
+- **Material Ripples**: Authentic Material Design button interactions with ripple effects
+- **Custom Error Pages**: Branded 404 page maintaining site layout and theme
 - **Flash Prevention**: Blocking scripts prevent theme loading flashes
 - **Accessibility**: Semantic HTML with proper ARIA attributes
