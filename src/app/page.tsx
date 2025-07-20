@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1" id="main-content">
-        <div className="max-w-3xl mx-auto p-6">
+        <div className="max-w-3xl mx-auto px-6 py-6 pl-[calc(1.5rem+12px)]">
           <HeroContent />
         </div>
       </main>
