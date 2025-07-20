@@ -1,6 +1,5 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { Navbar, Footer } from '@/components';
 import { siteConfig } from '@/lib/constants';
 
 export default function NotFound() {

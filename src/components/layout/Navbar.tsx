@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import MaterialThemeToggle from './MaterialThemeToggle';
+import { MaterialThemeToggle } from '../ui';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

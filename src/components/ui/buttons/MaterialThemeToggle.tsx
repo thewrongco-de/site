@@ -1,8 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import '@material/web/button/text-button.js';
-import MaterialLightModeIcon from './icons/MaterialLightModeIcon';
-import MaterialDarkModeIcon from './icons/MaterialDarkModeIcon';
+import { MaterialLightModeIcon, MaterialDarkModeIcon } from '../icons';
 
 // Define the Material Web component type
 interface MaterialTextButtonProps extends React.HTMLAttributes<HTMLElement> {

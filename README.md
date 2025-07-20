@@ -20,14 +20,24 @@ src/
 │   ├── not-found.tsx                # Custom 404 page with glitch effect
 │   ├── globals.css                  # Global styles + Material Design overrides
 │   └── favicon.ico                  # Site icon
-├── components/                       # UI Components
-│   ├── Navbar.tsx                  # Interactive glass navbar with clickable title
-│   ├── HeroContent.tsx             # Problem → Solution messaging
-│   ├── Footer.tsx                  # Founder links with hover effects
-│   ├── MaterialThemeToggle.tsx     # MD theme toggle button
-│   └── icons/                      # Material Design SVG icons
-│       ├── MaterialLightModeIcon.tsx
-│       └── MaterialDarkModeIcon.tsx
+├── components/                       # UI Components (Organized by Purpose)
+│   ├── ui/                          # Reusable UI Components
+│   │   ├── buttons/                 # Button Components
+│   │   │   ├── MaterialThemeToggle.tsx  # MD theme toggle button
+│   │   │   └── index.ts             # Button exports
+│   │   ├── icons/                   # Icon Components
+│   │   │   ├── MaterialLightModeIcon.tsx # Light mode icon
+│   │   │   ├── MaterialDarkModeIcon.tsx  # Dark mode icon
+│   │   │   └── index.ts             # Icon exports
+│   │   └── index.ts                 # UI component exports
+│   ├── layout/                      # Layout Components
+│   │   ├── Navbar.tsx              # Interactive glass navbar with clickable title
+│   │   ├── Footer.tsx              # Founder links with hover effects
+│   │   └── index.ts                # Layout exports
+│   ├── content/                     # Content Components
+│   │   ├── HeroContent.tsx         # Problem → Solution messaging
+│   │   └── index.ts                # Content exports
+│   └── index.ts                     # Main component exports (barrel file)
 ├── lib/                             # Utilities & Config
 │   ├── fonts.ts                    # Google Fonts setup
 │   ├── constants.ts                # Site config & founder data
@@ -41,14 +51,15 @@ src/
 ### Core Features
 - **Monochrome Design System**: Pure black/white aesthetic with alpha variations
 - **System Theme Detection**: Automatically follows OS dark/light preferences
-- **Manual Theme Override**: Material Design toggle with persistent localStorage
+- **Manual Theme Override**: Toggle with persistent localStorage
 - **Glass Morphism**: Navbar with backdrop blur and transparency effects
-- **Material Design Integration**: Authentic MD components with custom theming
+- **Material Design Integration**: MD components with custom theming
 
 ### Technical Features
 - **Server-Side Rendering**: Static generation with Next.js App Router
 - **TypeScript Strict Mode**: Full type safety with path aliases
-- **Component Architecture**: Modular, reusable React components
+- **Component Architecture**: Organized, modular React components with barrel exports
+- **Clean Import Structure**: Logical component organization (ui/layout/content)
 - **Performance Optimization**: Font optimization, CSS optimization, bundle analysis
 - **SEO & Analytics**: OpenGraph metadata, Vercel Analytics integration
 
@@ -56,7 +67,7 @@ src/
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 - **Interactive Navigation**: Clickable site title with Material Design interactions
 - **Glitch Effects**: CSS animations for digital aesthetic on 404 page
-- **Material Ripples**: Authentic Material Design button interactions with ripple effects
-- **Custom Error Pages**: Branded 404 page maintaining site layout and theme
+- **Material Ripples**: Material Design button with ripple effects
+- **Custom Error Pages**: 404 page with glitch effects
 - **Flash Prevention**: Blocking scripts prevent theme loading flashes
 - **Accessibility**: Semantic HTML with proper ARIA attributes

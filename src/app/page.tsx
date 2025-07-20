@@ -1,7 +1,5 @@
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import HeroContent from '@/components/HeroContent';
-import Footer from '@/components/Footer';
+import { Navbar, Footer, HeroContent } from '@/components';
 import { siteConfig } from '@/lib/constants';
 
 export default function Home() {

@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "mcp__figma-dev-mode-mcp-server__get_code"
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "Bash(mv:*)"
     ],
     "deny": []
   }
