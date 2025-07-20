@@ -137,6 +137,27 @@
     border-radius: 20px;
   }
 
+  /* Site title button styles to match Material Design theme toggle */
+  .site-title-button {
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin: -8px -12px;
+  }
+
+  .site-title-button:hover {
+    background-color: var(--foreground);
+    background-opacity: 0.08;
+    background: color-mix(in srgb, var(--foreground) 8%, transparent);
+  }
+
+  .site-title-button:focus {
+    background: color-mix(in srgb, var(--foreground) 12%, transparent);
+  }
+
+  .site-title-button:active {
+    background: color-mix(in srgb, var(--foreground) 16%, transparent);
+  }
+
   /* Glitch Effect */
   .glitch {
     position: relative;
